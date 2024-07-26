@@ -46,7 +46,10 @@ export default function Login({ navigation }) {
               </Pressable>
             </View>
             <View style={estilos.botoes}>
-              <Pressable style={estilos.cadastro}>
+              <Pressable
+                style={estilos.cadastro}
+                onPress={() => navigation.navigate("Cadastro")}
+              >
                 <Text style={estilos.textoCadastro}>CRIAR UMA CONTA</Text>
               </Pressable>
             </View>
@@ -95,7 +98,7 @@ const estilos = StyleSheet.create({
   botao: {
     backgroundColor: "#ffa187",
     padding: 20,
-    width: "60%",
+    width: "100%",
     borderRadius: 20,
   },
   textoBotao: {
@@ -107,7 +110,7 @@ const estilos = StyleSheet.create({
   cadastro: {
     backgroundColor: "rgb(0, 0, 0, 0.5)",
     padding: 20,
-    width: "60%",
+    width: "100%",
     borderRadius: 20,
     borderWidth: 2,
     borderColor: "#fa967a",

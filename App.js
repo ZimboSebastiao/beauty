@@ -15,6 +15,7 @@ import {
   FileChartColumnIncreasing,
 } from "lucide-react-native";
 import Relatorio from "./src/screen/Relatorio";
+import Cadastro from "./src/screen/Cadastro";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -100,6 +101,11 @@ export default function App() {
         <Stack.Screen
           name="Login"
           component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Cadastro"
+          component={Cadastro}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

@@ -1,101 +1,79 @@
-import { View, StyleSheet, TextInput, Pressable } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  Pressable,
+  Image,
+} from "react-native";
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
-import Cabelo from "../../assets/images/cabelo.jpg";
-import Makeup from "../../assets/images/makeup.jpg";
-import Unha from "../../assets/images/unha.jpg";
-import Marca from "../../assets/images/marca.png";
+import Logotipo from "../../assets/images/logo.png";
+import { Mail } from "lucide-react-native";
 
-import { Avatar, Button, Card, Text } from "react-native-paper";
-import { CircleUserRound, ChevronLeft } from "lucide-react-native";
-
-export default function PCadastro({ navigation }) {
+export default function Cadastro({ navigation }) {
   return (
-    <SafeContainer>
-      <View style={estilos.cabecalho}>
-        <ChevronLeft color="#ffff" size={32} />
-        <Text style={estilos.textoCabecalho}> MEUS DADOS</Text>
-        <CircleUserRound color="#ffff" size={32} />
-      </View>
+    <>
+      <SafeContainer>
+        <View style={estilos.logotipo}>
+          <Image source={Logotipo} />
+        </View>
+        <View style={estilos.form}>
+          <View>
+            <Text style={estilos.label}>Nome</Text>
+            <TextInput
+              placeholder="Digite seu nome"
+              style={estilos.input}
+              left={(props) => <Mail {...props} />}
+            />
+            <Text style={estilos.label}>E-mail</Text>
+            <TextInput
+              placeholder="Digite seu email"
+              style={estilos.input}
+              left={(props) => <Mail {...props} />}
+            />
+            <Text style={estilos.label}>Celular</Text>
+            <TextInput
+              placeholder="Digite seu número"
+              style={estilos.input}
+              left={(props) => <Mail {...props} />}
+            />
+            <Text style={estilos.label}>Senha</Text>
+            <TextInput
+              placeholder="Digite sua senha"
+              style={estilos.input}
+              left={(props) => <Mail {...props} />}
+            />
 
-      <View style={estilos.form}>
-        <View>
-          <Text style={estilos.label}>Nome Completo</Text>
-          <TextInput
-            style={estilos.input}
-            left={(props) => <Mail {...props} />}
-          />
-
-          <Text style={estilos.label}>E-mail</Text>
-          <TextInput style={estilos.input} />
-
-          <Text style={estilos.label}>Contato</Text>
-          <TextInput style={estilos.input} />
+            <Text style={estilos.label}>Confirmar senha</Text>
+            <TextInput placeholder="Confirme sua senha" style={estilos.input} />
+          </View>
 
           <View>
             <View style={estilos.botoes}>
               <Pressable
                 style={estilos.botao}
-                onPress={() =>
-                  navigation.navigate("HomeScreen", { screen: "Home" })
-                }
+                onPress={() => navigation.navigate("Login")}
               >
-                <Text style={estilos.textoBotao}>ENTRAR</Text>
+                <Text style={estilos.textoBotao}>CADASTRAR</Text>
               </Pressable>
             </View>
           </View>
         </View>
-      </View>
-    </SafeContainer>
+      </SafeContainer>
+    </>
   );
 }
 
 const estilos = StyleSheet.create({
-  cabecalho: {
-    backgroundColor: "#223f4d",
+  logotipo: {
     width: "100%",
-    padding: 12,
-    paddingTop: 30,
-    paddingBottom: 25,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
   },
-  textoCabecalho: {
-    color: "#ffff",
-    fontSize: 14,
-  },
-  viewCartao: {
-    marginTop: 50,
-  },
-  cartao: {
-    marginVertical: 10,
-    width: "80%",
-    margin: 10,
-  },
-  cartaoFormata: {
-    // backgroundColor: "blue",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderRadius: 30,
-  },
-  imagem: {
-    borderRadius: 20,
-  },
-  texto: {
-    padding: 20,
-    color: "#577672",
-    fontWeight: "bold",
-    fontSize: 18,
-  },
-
   form: {
     width: "100%",
     padding: 20,
-    paddingTop: 20,
+    paddingTop: 0,
     marginTop: 0,
   },
   label: {
@@ -106,11 +84,17 @@ const estilos = StyleSheet.create({
   },
   input: {
     backgroundColor: "#F9F9F9",
-    padding: 15,
+    padding: 25,
     borderWidth: 1,
     borderRadius: 15,
     elevation: 3,
     borderColor: "white",
+  },
+  recuperar: {
+    color: "#577672",
+    fontSize: 15,
+    textAlign: "right",
+    paddingTop: 8,
   },
   botoes: {
     justifyContent: "center",
@@ -120,7 +104,7 @@ const estilos = StyleSheet.create({
   botao: {
     backgroundColor: "#ffa187",
     padding: 20,
-    width: "60%",
+    width: "100%",
     borderRadius: 20,
   },
   textoBotao: {
@@ -128,5 +112,19 @@ const estilos = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
     color: "#fff",
+  },
+  cadastro: {
+    backgroundColor: "rgb(0, 0, 0, 0.5)",
+    padding: 20,
+    width: "60%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "#fa967a",
+  },
+  textoCadastro: {
+    textAlign: "center",
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#fa967a",
   },
 });
