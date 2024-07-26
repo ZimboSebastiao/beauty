@@ -83,8 +83,17 @@ export default function Agendar({ navigation }) {
         />
       </View>
 
-      <View>
+      <View style={estilos.horarios}>
         <Text style={estilos.texto}>Horários disponíveis</Text>
+
+        <View style={estilos.horas}>
+          <Text style={estilos.hora}>18:20</Text>
+          <Text style={estilos.hora}>18:20</Text>
+          <Text style={estilos.hora}>18:20</Text>
+          <Text style={estilos.hora}>18:20</Text>
+          <Text style={estilos.hora}>18:20</Text>
+          <Text style={estilos.hora}>18:20</Text>
+        </View>
       </View>
     </SafeContainer>
   );
@@ -116,5 +125,25 @@ const estilos = StyleSheet.create({
     fontSize: 20,
     color: "#fa967a",
     fontWeight: "bold",
+    textAlign: "center",
+  },
+  horarios: {
+    width: "84%",
+    padding: 20,
+  },
+  horas: {
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+  },
+  hora: {
+    backgroundColor: "#ffff",
+    padding: 10,
+    margin: 5,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "white",
+    elevation: 2,
   },
 });
