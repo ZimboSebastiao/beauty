@@ -90,7 +90,6 @@ const estilos = StyleSheet.create({
     padding: 10,
     paddingTop: 30,
     paddingBottom: 25,
-
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

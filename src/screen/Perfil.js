@@ -17,7 +17,7 @@ export default function Perfil({ navigation }) {
       <View style={estilos.cabecalho}>
         <ChevronLeft color="#ffff" size={32} />
         <Text style={estilos.textoCabecalho}> MEUS DADOS</Text>
-        <CircleUserRound color="#ffff" size={32} />
+        <Avatar.Text size={39} label="GS" />
       </View>
 
       <View style={estilos.form}>
@@ -79,13 +79,11 @@ export default function Perfil({ navigation }) {
 
 const estilos = StyleSheet.create({
   cabecalho: {
-    backgroundColor: "#223f4d",
+    backgroundColor: "#f57856",
     width: "100%",
-    padding: 12,
+    padding: 10,
     paddingTop: 30,
     paddingBottom: 25,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -116,7 +114,7 @@ const estilos = StyleSheet.create({
     padding: 20,
     color: "#577672",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 20,
   },
 
   form: {
