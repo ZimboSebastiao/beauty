@@ -8,23 +8,49 @@ import Home from "./src/screen/Home";
 import Agendar from "./src/screen/Agendar";
 import Perfil from "./src/screen/Perfil";
 
-import { FileText, House, UserRound } from "lucide-react-native";
+import { CalendarDays, House, UserRound } from "lucide-react-native";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function HomeScreen() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          backgroundColor: "#223f4d",
+          paddingBottom: 8,
+          paddingTop: 10,
+          height: 60,
+        },
+        tabBarIconStyle: {
+          marginBottom: 5,
+        },
+        tabBarActiveTintColor: "#ffa187",
+        tabBarInactiveTintColor: "gray",
+        tabBarLabelStyle: {
+          fontSize: 14,
+          fontWeight: "bold",
+        },
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={Home}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => <House color="#ffff" size={size} />,
+        }}
       />
       <Tab.Screen
         name="Agendamento"
         component={Agendar}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <CalendarDays color="#ffff" size={size} />
+          ),
+        }}
       />
       <Tab.Screen
         name="Perfil"
@@ -68,7 +94,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#F4F4F4",
     alignItems: "center",
     justifyContent: "center",
   },

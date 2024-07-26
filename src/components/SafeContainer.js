@@ -33,6 +33,7 @@ export default function SafeContainer({ children }) {
 
 const estilos = StyleSheet.create({
   container: {
+    backgroundColor: "#F4F4F4",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
