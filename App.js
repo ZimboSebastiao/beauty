@@ -16,6 +16,7 @@ import {
 } from "lucide-react-native";
 import Relatorio from "./src/screen/Relatorio";
 import Cadastro from "./src/screen/Cadastro";
+import Cabelos from "./src/screen/Cabelos";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -53,6 +54,20 @@ function HomeScreen() {
           ),
           tabBarLabel: () => null,
           // headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="Cabelos"
+        component={Cabelos}
+        options={{
+          tabBarIcon: ({ color, size, focused }) => (
+            <View style={focused ? styles.activeTab : styles.inactiveTab}>
+              <House color={color} size={27} />
+            </View>
+          ),
+          tabBarLabel: () => null,
+          headerShown: false,
+          tabBarButton: () => null, // Esta linha oculta a aba
         }}
       />
       <Tab.Screen

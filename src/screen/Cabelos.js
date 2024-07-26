@@ -1,52 +1,32 @@
-import { View, StyleSheet, Image, StatusBar, Pressable } from "react-native";
+import { View, StyleSheet, Image, StatusBar } from "react-native";
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
 import Cabelo from "../../assets/images/cabelo.jpg";
 import Makeup from "../../assets/images/makeup.jpg";
 import Unha from "../../assets/images/unha.jpg";
-import Marca from "../../assets/images/marca.png";
 
 import { Avatar, Button, Card, Text } from "react-native-paper";
 import { CircleUserRound, AlignLeft } from "lucide-react-native";
 
-const obterSaudacao = () => {
-  const horas = new Date().getHours();
-  if (horas < 12) {
-    return "Bom dia";
-  } else if (horas < 18) {
-    return "Boa tarde";
-  } else {
-    return "Boa noite";
-  }
-};
-
-export default function Home({ navigation }) {
+export default function Cabelos({ navigation }) {
   return (
     <SafeContainer>
       <View style={estilos.cabecalho}>
         <AlignLeft color="#ffff" size={32} />
-        {/* <Image source={Marca} /> */}
 
-        <Text style={estilos.textoCabecalho}> {obterSaudacao()}, Fulano!</Text>
         <Avatar.Text size={39} label="GS" />
       </View>
 
       <View style={estilos.viewCartao}>
-        <Pressable
-          style={estilos.cartao}
-          onPress={() => navigation.navigate("Cabelos")}
-        >
-          <Card>
-            <Card.Content style={estilos.cartaoFormata}>
-              <Image source={Cabelo} style={estilos.imagem} />
-              <Text variant="titleLarge" style={estilos.texto}>
-                CABELO
-              </Text>
-            </Card.Content>
-          </Card>
-        </Pressable>
+        <Card style={estilos.cartao}>
+          <Card.Content style={estilos.cartaoFormata}>
+            <Image source={Cabelo} style={estilos.imagem} />
+            <Text variant="titleLarge" style={estilos.texto}>
+              CABELO
+            </Text>
+          </Card.Content>
+        </Card>
       </View>
-
       <View>
         <Card style={estilos.cartao}>
           <Card.Content style={estilos.cartaoFormata}>
