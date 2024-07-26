@@ -2,6 +2,8 @@ import { View, StyleSheet, Image } from "react-native";
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
 import Cabelo from "../../assets/images/cabelo.jpg";
+import Makeup from "../../assets/images/makeup.jpg";
+import Unha from "../../assets/images/unha.jpg";
 
 import { Avatar, Button, Card, Text } from "react-native-paper";
 
@@ -11,15 +13,33 @@ export default function Home({ navigation }) {
   return (
     <SafeContainer>
       <Text>Home</Text>
-      <View style={estilos.cartao}>
-        <Card>
-          {/* <Card.Title
-          // left={LeftContent}
-          /> */}
+      <View>
+        <Card style={estilos.cartao}>
           <Card.Content style={estilos.cartaoFormata}>
-            {/* <Card.Cover source={{ uri: "https://picsum.photos/700" }} /> */}
             <Image source={Cabelo} style={estilos.imagem} />
-            <Text variant="titleLarge">Card title</Text>
+            <Text variant="titleLarge" style={estilos.texto}>
+              CABELO
+            </Text>
+          </Card.Content>
+        </Card>
+      </View>
+      <View>
+        <Card style={estilos.cartao}>
+          <Card.Content style={estilos.cartaoFormata}>
+            <Image source={Unha} style={estilos.imagem} />
+            <Text variant="titleLarge" style={estilos.texto}>
+              UNHAS
+            </Text>
+          </Card.Content>
+        </Card>
+      </View>
+      <View>
+        <Card style={estilos.cartao}>
+          <Card.Content style={estilos.cartaoFormata}>
+            <Image source={Makeup} style={estilos.imagem} />
+            <Text variant="titleLarge" style={estilos.texto}>
+              Makeup
+            </Text>
           </Card.Content>
         </Card>
       </View>
@@ -30,17 +50,22 @@ export default function Home({ navigation }) {
 const estilos = StyleSheet.create({
   cartao: {
     width: "80%",
-    backgroundColor: "red",
+    // backgroundColor: "red",
+    margin: 10,
   },
   cartaoFormata: {
-    backgroundColor: "blue",
+    // backgroundColor: "blue",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    borderRadius: 30,
   },
   imagem: {
-    backgroundColor: "red",
-    width: "60%",
-    // height: "100%",
+    borderRadius: 20,
+  },
+  texto: {
+    padding: 20,
+    color: "#577672",
+    fontWeight: "bold",
   },
 });
