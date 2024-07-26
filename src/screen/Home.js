@@ -25,8 +25,10 @@ export default function Home({ navigation }) {
     <SafeContainer>
       <View style={estilos.cabecalho}>
         <AlignLeft color="#ffff" size={32} />
-        <Text style={estilos.textoCabecalho}> {obterSaudacao()}, Fulano!</Text>
-        <CircleUserRound color="#ffff" size={32} />
+        <Image source={Marca} />
+
+        {/* <Text style={estilos.textoCabecalho}> {obterSaudacao()}, Fulano!</Text> */}
+        <Avatar.Text size={39} label="GS" />
       </View>
 
       <View style={estilos.viewCartao}>
@@ -65,11 +67,11 @@ export default function Home({ navigation }) {
 
 const estilos = StyleSheet.create({
   cabecalho: {
-    backgroundColor: "#223f4d",
+    backgroundColor: "#2e2e2e",
     width: "100%",
-    padding: 12,
-    paddingTop: 30,
-    paddingBottom: 25,
+    padding: 10,
+    // paddingTop: 30,
+    // paddingBottom: 25,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     flexDirection: "row",

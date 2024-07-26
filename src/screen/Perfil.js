@@ -7,6 +7,8 @@ import {
   CircleUserRound,
   ChevronLeft,
   UserRoundPen,
+  Trash2,
+  LogOut,
 } from "lucide-react-native";
 
 export default function Perfil({ navigation }) {
@@ -43,6 +45,29 @@ export default function Perfil({ navigation }) {
               >
                 <UserRoundPen color="#ffff" />
                 <Text style={estilos.textoBotao}>EDITAR</Text>
+              </Pressable>
+            </View>
+            <View style={estilos.botoes}>
+              <Pressable
+                style={estilos.deletar}
+                onPress={() =>
+                  navigation.navigate("HomeScreen", { screen: "Home" })
+                }
+              >
+                <Trash2 color="#ffff" />
+                <Text style={estilos.textoBotao}>DELETAR</Text>
+              </Pressable>
+            </View>
+            <View style={estilos.botoes}>
+              <Pressable
+                style={estilos.sair}
+                onPress={() =>
+                  navigation.navigate("HomeScreen", { screen: "Home" })
+                }
+              >
+                <LogOut color="#223f4d" />
+                {""}
+                <Text style={estilos.textoBotaoSair}>SAIR</Text>
               </Pressable>
             </View>
           </View>
@@ -128,10 +153,34 @@ const estilos = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
   },
+  deletar: {
+    backgroundColor: "#eb1520",
+    padding: 12,
+    width: "40%",
+    borderRadius: 15,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  sair: {
+    backgroundColor: "rbg(0, 0, 0, 0.4)",
+    padding: 12,
+    width: "100%",
+    borderRadius: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    borderWidth: 2,
+  },
   textoBotao: {
     textAlign: "center",
     fontSize: 15,
     fontWeight: "bold",
     color: "#fff",
+  },
+  textoBotaoSair: {
+    textAlign: "center",
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#223f4d",
   },
 });

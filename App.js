@@ -25,7 +25,7 @@ function HomeScreen() {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: "#223f4d",
+          backgroundColor: "#ffa187",
           paddingBottom: 8,
           paddingTop: 10,
           height: 60,
@@ -33,7 +33,7 @@ function HomeScreen() {
         tabBarIconStyle: {
           marginBottom: 5,
         },
-        tabBarActiveTintColor: "#ffa187",
+        tabBarActiveTintColor: "#ffff",
         tabBarInactiveTintColor: "gray",
         tabBarLabelStyle: {
           fontSize: 12,
@@ -46,7 +46,13 @@ function HomeScreen() {
         component={Home}
         options={{
           headerShown: false,
-          tabBarIcon: ({ color, size }) => <House color="#ffff" size={size} />,
+          tabBarIcon: ({ color, size, focused }) => (
+            <View style={focused ? styles.activeTab : styles.inactiveTab}>
+              <House color={color} size={27} />
+            </View>
+          ),
+          tabBarLabel: () => null,
+          // headerShown: false,
         }}
       />
       <Tab.Screen
@@ -54,9 +60,12 @@ function HomeScreen() {
         component={Agendar}
         options={{
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <CalendarDays color="#ffff" size={size} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <View style={focused ? styles.activeTab : styles.inactiveTab}>
+              <CalendarDays color={color} size={27} />
+            </View>
           ),
+          tabBarLabel: () => null,
         }}
       />
       <Tab.Screen
@@ -64,9 +73,12 @@ function HomeScreen() {
         component={Relatorio}
         options={{
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <FileChartColumnIncreasing color="#ffff" size={size} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <View style={focused ? styles.activeTab : styles.inactiveTab}>
+              <FileChartColumnIncreasing color={color} size={27} />
+            </View>
           ),
+          tabBarLabel: () => null,
         }}
       />
       <Tab.Screen
@@ -74,9 +86,12 @@ function HomeScreen() {
         component={Perfil}
         options={{
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <UserRound color="#ffff" size={size} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <View style={focused ? styles.activeTab : styles.inactiveTab}>
+              <UserRound color={color} size={27} />
+            </View>
           ),
+          tabBarLabel: () => null,
         }}
       />
     </Tab.Navigator>
@@ -119,5 +134,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#F4F4F4",
     alignItems: "center",
     justifyContent: "center",
+  },
+  activeTab: {
+    backgroundColor: "gray", // Cor de fundo do círculo
+    padding: 15,
+    borderRadius: 30, // Torna a View circular
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  inactiveTab: {
+    // Estilo para ícones inativos, se necessário
   },
 });
