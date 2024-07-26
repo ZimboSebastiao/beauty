@@ -1,15 +1,15 @@
 import { View, StyleSheet, TextInput, Pressable } from "react-native";
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
+import Cabelo from "../../assets/images/cabelo.jpg";
+import Makeup from "../../assets/images/makeup.jpg";
+import Unha from "../../assets/images/unha.jpg";
+import Marca from "../../assets/images/marca.png";
 
 import { Avatar, Button, Card, Text } from "react-native-paper";
-import {
-  CircleUserRound,
-  ChevronLeft,
-  UserRoundPen,
-} from "lucide-react-native";
+import { CircleUserRound, ChevronLeft } from "lucide-react-native";
 
-export default function Perfil({ navigation }) {
+export default function PCadastro({ navigation }) {
   return (
     <SafeContainer>
       <View style={estilos.cabecalho}>
@@ -22,16 +22,15 @@ export default function Perfil({ navigation }) {
         <View>
           <Text style={estilos.label}>Nome Completo</Text>
           <TextInput
-            editable={false}
             style={estilos.input}
             left={(props) => <Mail {...props} />}
           />
 
           <Text style={estilos.label}>E-mail</Text>
-          <TextInput editable={false} style={estilos.input} />
+          <TextInput style={estilos.input} />
 
           <Text style={estilos.label}>Contato</Text>
-          <TextInput editable={false} style={estilos.input} />
+          <TextInput style={estilos.input} />
 
           <View>
             <View style={estilos.botoes}>
@@ -41,8 +40,7 @@ export default function Perfil({ navigation }) {
                   navigation.navigate("HomeScreen", { screen: "Home" })
                 }
               >
-                <UserRoundPen color="#ffff" />
-                <Text style={estilos.textoBotao}>EDITAR</Text>
+                <Text style={estilos.textoBotao}>ENTRAR</Text>
               </Pressable>
             </View>
           </View>
@@ -115,18 +113,15 @@ const estilos = StyleSheet.create({
     borderColor: "white",
   },
   botoes: {
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 15,
   },
   botao: {
     backgroundColor: "#ffa187",
-    padding: 12,
-    width: "40%",
-    borderRadius: 15,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
+    padding: 20,
+    width: "60%",
+    borderRadius: 20,
   },
   textoBotao: {
     textAlign: "center",
