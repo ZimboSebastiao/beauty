@@ -11,8 +11,9 @@ import {
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
 import Logotipo from "../../assets/images/logo.png";
+import { Mail } from "lucide-react-native";
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <>
       <SafeContainer>
@@ -22,7 +23,11 @@ export default function Login() {
         <View style={estilos.form}>
           <View>
             <Text style={estilos.label}>E-mail</Text>
-            <TextInput placeholder="Digite seu email" style={estilos.input} />
+            <TextInput
+              placeholder="Digite seu email"
+              style={estilos.input}
+              left={(props) => <Mail {...props} />}
+            />
 
             <Text style={estilos.label}>Senha</Text>
             <TextInput placeholder="Digite sua senha" style={estilos.input} />
@@ -32,7 +37,12 @@ export default function Login() {
 
           <View>
             <View style={estilos.botoes}>
-              <Pressable style={estilos.botao}>
+              <Pressable
+                style={estilos.botao}
+                onPress={() =>
+                  navigation.navigate("HomeScreen", { screen: "Home" })
+                }
+              >
                 <Text style={estilos.textoBotao}>ENTRAR</Text>
               </Pressable>
             </View>
