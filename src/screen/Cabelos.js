@@ -1,51 +1,83 @@
-import { View, StyleSheet, Image, StatusBar } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
 import Cabelo from "../../assets/images/cabelo.jpg";
 import Makeup from "../../assets/images/makeup.jpg";
 import Unha from "../../assets/images/unha.jpg";
 
-import { Avatar, Button, Card, Text } from "react-native-paper";
-import { CircleUserRound, AlignLeft } from "lucide-react-native";
+import { Avatar, Button, Card } from "react-native-paper";
+import { CircleUserRound, AlignLeft, ChevronLeft } from "lucide-react-native";
 
 export default function Cabelos({ navigation }) {
   return (
     <SafeContainer>
       <View style={estilos.cabecalho}>
-        <AlignLeft color="#ffff" size={32} />
+        <ChevronLeft color="#ffff" size={32} />
+        <Text style={estilos.titulo}> CABELO</Text>
 
         <Avatar.Text size={39} label="GS" />
       </View>
 
-      <View style={estilos.viewCartao}>
-        <Card style={estilos.cartao}>
-          <Card.Content style={estilos.cartaoFormata}>
-            <Image source={Cabelo} style={estilos.imagem} />
-            <Text variant="titleLarge" style={estilos.texto}>
-              CABELO
-            </Text>
-          </Card.Content>
-        </Card>
-      </View>
-      <View>
-        <Card style={estilos.cartao}>
-          <Card.Content style={estilos.cartaoFormata}>
-            <Image source={Unha} style={estilos.imagem} />
-            <Text variant="titleLarge" style={estilos.texto}>
-              UNHAS
-            </Text>
-          </Card.Content>
-        </Card>
-      </View>
-      <View>
-        <Card style={estilos.cartao}>
-          <Card.Content style={estilos.cartaoFormata}>
-            <Image source={Makeup} style={estilos.imagem} />
-            <Text variant="titleLarge" style={estilos.texto}>
-              Makeup
-            </Text>
-          </Card.Content>
-        </Card>
+      <View style={estilos.grupo}>
+        <View style={estilos.viewCartao}>
+          <View style={estilos.cartaoFormata}>
+            <Text style={estilos.texto}>HIDRATAÇÃO +</Text>
+            <Text style={estilos.texto}> ESCOVA</Text>
+            <Text style={estilos.textoCabecalho}>1.200KZ</Text>
+          </View>
+          <View style={estilos.cartao}>
+            <Text style={estilos.textoMarcar}>MARCAR</Text>
+            <Text style={estilos.textoMarcar}>HORÁRIO</Text>
+          </View>
+        </View>
+
+        <View style={estilos.viewCartao}>
+          <View style={estilos.cartaoFormata}>
+            <Text style={estilos.texto}>CORTE + ESCOVA</Text>
+
+            <Text style={estilos.textoCabecalho}>1.000KZ</Text>
+          </View>
+          <View style={estilos.cartao}>
+            <Text style={estilos.textoMarcar}>MARCAR</Text>
+            <Text style={estilos.textoMarcar}>HORÁRIO</Text>
+          </View>
+        </View>
+
+        <View style={estilos.viewCartao}>
+          <View style={estilos.cartaoFormata}>
+            <Text style={estilos.texto}>PENTEADO</Text>
+
+            <Text style={estilos.textoCabecalho}>900KZ</Text>
+          </View>
+          <View style={estilos.cartao}>
+            <Text style={estilos.textoMarcar}>MARCAR</Text>
+            <Text style={estilos.textoMarcar}>HORÁRIO</Text>
+          </View>
+        </View>
+
+        <View style={estilos.viewCartao}>
+          <View style={estilos.cartaoFormata}>
+            <Text style={estilos.texto}>CORTE</Text>
+
+            <Text style={estilos.textoCabecalho}>750KZ</Text>
+          </View>
+          <View style={estilos.cartao}>
+            <Text style={estilos.textoMarcar}>MARCAR</Text>
+            <Text style={estilos.textoMarcar}>HORÁRIO</Text>
+          </View>
+        </View>
+
+        <View style={estilos.viewCartao}>
+          <View style={estilos.cartaoFormata}>
+            <Text style={estilos.texto}>PINTURA</Text>
+
+            <Text style={estilos.textoCabecalho}>850KZ</Text>
+          </View>
+          <View style={estilos.cartao}>
+            <Text style={estilos.textoMarcar}>MARCAR</Text>
+            <Text style={estilos.textoMarcar}>HORÁRIO</Text>
+          </View>
+        </View>
       </View>
     </SafeContainer>
   );
@@ -53,7 +85,7 @@ export default function Cabelos({ navigation }) {
 
 const estilos = StyleSheet.create({
   cabecalho: {
-    backgroundColor: "#ffa187",
+    backgroundColor: "#f57856",
     width: "100%",
     padding: 10,
     paddingTop: 30,
@@ -64,32 +96,53 @@ const estilos = StyleSheet.create({
     alignItems: "center",
   },
   textoCabecalho: {
-    color: "#ffff",
+    color: "#577672",
     fontSize: 15,
     fontWeight: "bold",
+
+    textAlign: "right",
+    // backgroundColor: "red",
+  },
+  grupo: {
+    padding: 15,
   },
   viewCartao: {
-    marginTop: 50,
+    marginTop: 35,
+    flexDirection: "row",
+    borderWidth: 2,
+    borderRadius: 30,
+    borderColor: "white",
   },
   cartao: {
-    marginVertical: 10,
-    width: "80%",
-    margin: 10,
+    padding: 20,
+    backgroundColor: "#fa967a",
+    borderTopEndRadius: 30,
+    borderBottomEndRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "38%",
   },
   cartaoFormata: {
-    // backgroundColor: "blue",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderRadius: 30,
-  },
-  imagem: {
-    borderRadius: 20,
-  },
-  texto: {
+    width: "62%",
+    // height: "30%",
     padding: 20,
-    color: "#577672",
-    fontWeight: "bold",
+    borderTopStartRadius: 30,
+    borderBottomStartRadius: 30,
+    backgroundColor: "#ffff",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+
+  texto: {
     fontSize: 18,
+    color: "#577672",
+  },
+  titulo: {
+    fontSize: 20,
+    color: "#577672",
+  },
+  textoMarcar: {
+    fontSize: 18,
+    color: "#577672",
   },
 });

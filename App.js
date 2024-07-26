@@ -26,7 +26,7 @@ function HomeScreen() {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: "#ffa187",
+          backgroundColor: "#f57856",
           paddingBottom: 8,
           paddingTop: 10,
           height: 60,
@@ -34,8 +34,8 @@ function HomeScreen() {
         tabBarIconStyle: {
           marginBottom: 5,
         },
-        tabBarActiveTintColor: "#ffff",
-        tabBarInactiveTintColor: "gray",
+        tabBarActiveTintColor: "#fa967a",
+        tabBarInactiveTintColor: "#ffff",
         tabBarLabelStyle: {
           fontSize: 12,
           fontWeight: "bold",
@@ -151,9 +151,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   activeTab: {
-    backgroundColor: "gray", // Cor de fundo do círculo
+    backgroundColor: "#ffff",
     padding: 15,
-    borderRadius: 30, // Torna a View circular
+    borderRadius: 30,
     alignItems: "center",
     justifyContent: "center",
   },

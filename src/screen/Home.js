@@ -73,7 +73,7 @@ export default function Home({ navigation }) {
 
 const estilos = StyleSheet.create({
   cabecalho: {
-    backgroundColor: "#ffa187",
+    backgroundColor: "#f57856",
     width: "100%",
     padding: 10,
     paddingTop: 30,
