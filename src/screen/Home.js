@@ -1,19 +1,35 @@
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image, StatusBar } from "react-native";
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
 import Cabelo from "../../assets/images/cabelo.jpg";
 import Makeup from "../../assets/images/makeup.jpg";
 import Unha from "../../assets/images/unha.jpg";
+import Marca from "../../assets/images/marca.png";
 
 import { Avatar, Button, Card, Text } from "react-native-paper";
+import { CircleUserRound, AlignLeft } from "lucide-react-native";
 
-// const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
+const obterSaudacao = () => {
+  const horas = new Date().getHours();
+  if (horas < 12) {
+    return "Bom dia";
+  } else if (horas < 18) {
+    return "Boa tarde";
+  } else {
+    return "Boa noite";
+  }
+};
 
 export default function Home({ navigation }) {
   return (
     <SafeContainer>
-      <Text>Home</Text>
-      <View>
+      <View style={estilos.cabecalho}>
+        <AlignLeft color="#ffff" size={32} />
+        <Text style={estilos.textoCabecalho}> {obterSaudacao()}, Fulano!</Text>
+        <CircleUserRound color="#ffff" size={32} />
+      </View>
+
+      <View style={estilos.viewCartao}>
         <Card style={estilos.cartao}>
           <Card.Content style={estilos.cartaoFormata}>
             <Image source={Cabelo} style={estilos.imagem} />
@@ -48,9 +64,28 @@ export default function Home({ navigation }) {
 }
 
 const estilos = StyleSheet.create({
+  cabecalho: {
+    backgroundColor: "#223f4d",
+    width: "100%",
+    padding: 12,
+    paddingTop: 30,
+    paddingBottom: 25,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  textoCabecalho: {
+    color: "#ffff",
+    fontSize: 14,
+  },
+  viewCartao: {
+    marginTop: 50,
+  },
   cartao: {
+    marginVertical: 10,
     width: "80%",
-    // backgroundColor: "red",
     margin: 10,
   },
   cartaoFormata: {
@@ -67,5 +102,6 @@ const estilos = StyleSheet.create({
     padding: 20,
     color: "#577672",
     fontWeight: "bold",
+    fontSize: 18,
   },
 });

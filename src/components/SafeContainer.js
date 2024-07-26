@@ -25,6 +25,7 @@ export default function SafeContainer({ children }) {
 
   return (
     <ScrollView>
+      <StatusBar hidden={true} />
       <SafeAreaView style={estilos.container} onLayout={aoAtualizarLayout}>
         {children}
       </SafeAreaView>

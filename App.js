@@ -8,7 +8,13 @@ import Home from "./src/screen/Home";
 import Agendar from "./src/screen/Agendar";
 import Perfil from "./src/screen/Perfil";
 
-import { CalendarDays, House, UserRound } from "lucide-react-native";
+import {
+  CalendarDays,
+  House,
+  UserRound,
+  FileChartColumnIncreasing,
+} from "lucide-react-native";
+import Relatorio from "./src/screen/Relatorio";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -29,7 +35,7 @@ function HomeScreen() {
         tabBarActiveTintColor: "#ffa187",
         tabBarInactiveTintColor: "gray",
         tabBarLabelStyle: {
-          fontSize: 14,
+          fontSize: 12,
           fontWeight: "bold",
         },
       }}
@@ -49,6 +55,16 @@ function HomeScreen() {
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <CalendarDays color="#ffff" size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Relatório"
+        component={Relatorio}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <FileChartColumnIncreasing color="#ffff" size={size} />
           ),
         }}
       />
