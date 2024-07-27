@@ -99,7 +99,7 @@ export default function Home({ navigation }) {
             <Card.Content style={estilos.cartaoFormata}>
               <Image source={Makeup} style={estilos.imagem} />
               <Text variant="titleLarge" style={estilos.texto}>
-                Makeup
+                MAKEUP
               </Text>
             </Card.Content>
           </Card>
