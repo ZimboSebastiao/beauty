@@ -1,6 +1,6 @@
-import { View, StyleSheet, TextInput, Pressable } from "react-native";
+import { View, StyleSheet, TextInput, Pressable, Text } from "react-native";
 import React, { useState } from "react";
-import { Avatar, Button, Card, Text } from "react-native-paper";
+import { Avatar, Button, Card } from "react-native-paper";
 import { ChevronLeft } from "lucide-react-native";
 import { Calendar } from "react-native-calendars";
 import { LocaleConfig } from "react-native-calendars";
@@ -95,6 +95,10 @@ export default function Agendar({ navigation }) {
           <Text style={estilos.hora}>18:20</Text>
         </View>
       </View>
+
+      <Pressable style={estilos.confirmar} disabled={true}>
+        <Text style={estilos.textoConfirmar}>CONFIRMAR</Text>
+      </Pressable>
     </SafeContainer>
   );
 }
@@ -145,5 +149,19 @@ const estilos = StyleSheet.create({
     borderWidth: 1,
     borderColor: "white",
     elevation: 2,
+  },
+  confirmar: {
+    backgroundColor: "#fa967a",
+    padding: 10,
+    width: "95%",
+    borderRadius: 10,
+    elevation: 3,
+    marginBottom: 20,
+  },
+  textoConfirmar: {
+    color: "#ffff",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 16,
   },
 });
