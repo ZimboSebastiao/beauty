@@ -120,6 +120,7 @@ const estilos = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "38%",
+    textAlign: "center",
   },
   cartaoFormata: {
     width: "62%",
@@ -138,10 +139,10 @@ const estilos = StyleSheet.create({
   },
   titulo: {
     fontSize: 20,
-    color: "#577672",
+    color: "#ffff",
   },
   textoMarcar: {
     fontSize: 18,
-    color: "#577672",
+    color: "#ffff",
   },
 });
