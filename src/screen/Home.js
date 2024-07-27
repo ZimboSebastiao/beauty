@@ -131,11 +131,10 @@ const estilos = StyleSheet.create({
   },
   cartao: {
     marginVertical: 10,
-    width: "80%",
     margin: 10,
+    elevation: 3,
   },
   cartaoFormata: {
-    // backgroundColor: "blue",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
