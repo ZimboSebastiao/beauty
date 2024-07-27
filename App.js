@@ -17,6 +17,7 @@ import {
 import Relatorio from "./src/screen/Relatorio";
 import Cadastro from "./src/screen/Cadastro";
 import Cabelos from "./src/screen/Cabelos";
+import Agendados from "./src/screen/Agendados";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -81,6 +82,20 @@ function HomeScreen() {
             </View>
           ),
           tabBarLabel: () => null,
+        }}
+      />
+      <Tab.Screen
+        name="Agendados"
+        component={Agendados}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size, focused }) => (
+            <View style={focused ? styles.activeTab : styles.inactiveTab}>
+              <CalendarDays color={color} size={27} />
+            </View>
+          ),
+          tabBarLabel: () => null,
+          tabBarButton: () => null,
         }}
       />
       <Tab.Screen
