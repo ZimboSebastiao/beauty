@@ -51,7 +51,10 @@ export default function Home({ navigation }) {
                 </Button>
               }
             >
-              <Menu.Item onPress={() => {}} title="Item 1" />
+              <Menu.Item
+                onPress={() => navigation.navigate("Agendados")}
+                title="Agendamentos"
+              />
               <Menu.Item onPress={() => {}} title="Item 2" />
               <Divider />
               <Menu.Item onPress={() => {}} title="Item 3" />
